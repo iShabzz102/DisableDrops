@@ -26,7 +26,6 @@ class Loader extends PluginBase implements Listener {
    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
        //Adding Commands Soon...
    }
-}
  public function PlayerDeath(PlayerDeathEvent $ev){
   if($this->getConfig()->get("drops") == false) {
       $ev->setDrops([]);

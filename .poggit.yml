@@ -3,5 +3,5 @@ branches:
 - master
 projects:
   DisableDrops:
-    path: ""
+    path: "https://image.flaticon.com/icons/svg/1276/1276834.svg"
 ...

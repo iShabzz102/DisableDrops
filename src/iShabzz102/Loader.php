@@ -12,7 +12,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 
 class Loader extends PluginBase implements Listener {
-	public $prefix = TF::GOLD."[".TF::GREEN."(!)".TF::AQUA."drops".TF::GOLD."]".TF::RESET;
+	public $prefix = TF::GOLD."[".TF::GREEN.TF::AQUA."drops".TF::GOLD."]".TF::RESET;
 
 	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);

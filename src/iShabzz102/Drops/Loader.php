@@ -11,7 +11,7 @@ use pocketmine\utils\TextFormat as TF;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 class Loader extends PluginBase implements Listener {
-	public $prefix = TF::GOLD."[".TF::GREEN.TF::AQUA."drops".TF::GOLD."]".TF::RESET;
+    
 	public function onEnable(): void {
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		if($this->getConfig()->get("drops") !== true){
@@ -19,8 +19,8 @@ class Loader extends PluginBase implements Listener {
 		}else{
 			$statut = "enabled";
 		}
-		$this->getServer()->getLogger()->notice($this->prefix.TF::RED." You can edit it in config.yml");
-		$this->getServer()->getLogger()->notice($this->prefix.TF::GREEN." Drops $statut");
+		$this->getServer()->getLogger()->notice("You can edit it in config.yml");
+		$this->getServer()->getLogger()->notice("Drops $statut");
 	}
 	public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool {
 		if (!empty($args)) {
@@ -28,20 +28,20 @@ class Loader extends PluginBase implements Listener {
 				case 'on':
 					$this->getConfig()->set("drops", true);
 					$this->getConfig()->save();
-					$sender->sendMessage($this->prefix.TF::GREEN." Drops have been enabled");
+					$sender->sendMessage(TF::GREEN."Drops have been enabled");
 					break;
 				
 				case 'off':
 					$this->getConfig()->set("drops", false);
 					$this->getConfig()->save();
-					$sender->sendMessage($this->prefix.TF::GREEN." Drops have been disabled");
+					$sender->sendMessage(TF::RED."Drops have been disabled");
 					break;
 				default:
-					$sender->sendMessage($this->prefix.TF::RED." Usage:".TF::GREEN." /drops <on:off>");
+					$sender->sendMessage(TF::RED." Usage:".TF::GREEN." /drops <on:off>");
 					break;
 			}
 		} else {
-			$sender->sendMessage($this->prefix.TF::RED." Usage:".TF::GREEN." /drops <on:off>");
+			$sender->sendMessage(TF::RED." Usage:".TF::GREEN." /drops <on:off>");
 		}
 		return true;
 	}

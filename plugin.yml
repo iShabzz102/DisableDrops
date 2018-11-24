@@ -1,5 +1,5 @@
 name: Drops
-main: iShabzz102\Loader
+main: iShabzz102\Drops\Loader
 api: [3.0.0]
 version: 1.0.0
 authors: [Shabzz102, Atomization]

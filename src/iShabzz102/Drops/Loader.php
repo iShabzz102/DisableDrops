@@ -13,7 +13,7 @@ use pocketmine\command\Command;
 class Loader extends PluginBase implements Listener {
     
     /** @var string $prefix */
-    private $prefix = "§6[§a(!)§bdrops§6]§r";
+    private $prefix = "§6[§bdrops§6]§r";
     public function onEnable(): void {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         if ($this->getConfig()->get("drops") !== true) {
@@ -21,8 +21,8 @@ class Loader extends PluginBase implements Listener {
         } else {
             $statut = "enabled";
         }
-        $this->getServer()->getLogger()->notice($this->prefix . "§c You can edit it in config.yml");
-        $this->getServer()->getLogger()->notice($this->prefix . "§a Drops $statut");
+        $this->getServer()->getLogger()->notice("You can edit it in config.yml");
+        $this->getServer()->getLogger()->notice("Drops $statut");
     }
     /**
      * @param CommandSender $sender
@@ -43,7 +43,7 @@ class Loader extends PluginBase implements Listener {
                 case 'off':
                     $this->getConfig()->set("drops", false);
                     $this->getConfig()->save();
-                    $sender->sendMessage($this->prefix . "§a Drops have been disabled");
+                    $sender->sendMessage($this->prefix . "§c Drops have been disabled");
                     break;
                 default:
                     $sender->sendMessage($this->prefix . "§c Usage:§7 /drops <on:off>");

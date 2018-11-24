@@ -1,5 +1,5 @@
 <?php
-namespace iShabzz102;
+namespace iShabzz102\Drops;
 //PluginBase
 use pocketmine\Server;
 use pocketmine\Player;

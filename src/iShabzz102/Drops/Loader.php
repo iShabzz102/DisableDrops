@@ -21,8 +21,8 @@ class Loader extends PluginBase implements Listener {
         } else {
             $statut = "enabled";
         }
-        $this->getServer()->getLogger()->notice("You can edit it in config.yml");
-        $this->getServer()->getLogger()->notice("Drops $statut");
+        $this->getServer()->getLogger()->info("Drops $statut");
+        $this->getServer()->getLogger()->info("You can edit it in config.yml");
     }
     /**
      * @param CommandSender $sender
@@ -43,7 +43,7 @@ class Loader extends PluginBase implements Listener {
                 case 'off':
                     $this->getConfig()->set("drops", false);
                     $this->getConfig()->save();
-                    $sender->sendMessage($this->prefix . "§c Drops have been disabled");
+                    $sender->sendMessage($this->prefix . "§a Drops have been disabled");
                     break;
                 default:
                     $sender->sendMessage($this->prefix . "§c Usage:§7 /drops <on:off>");

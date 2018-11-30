@@ -22,7 +22,6 @@ class Loader extends PluginBase implements Listener {
             $statut = "enabled";
         }
         $this->getServer()->getLogger()->info("Drops $statut");
-        $this->getServer()->getLogger()->info("You can edit it in config.yml");
     }
     /**
      * @param CommandSender $sender
